@@ -1,0 +1,12 @@
+{
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "denoland.vscode-deno"
+  },
+  "terminal.integrated.automationProfile.linux": {
+    "path": "/usr/bin/zsh"
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh"
+}
