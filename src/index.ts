@@ -49,43 +49,22 @@ serve({
                     "type": 1,
                     components: [
                       {
-                        type: 3,
-                        custom_id: "p1",
-                        options: [
-                          {
-                            label: "ナワバリ",
-                            value: "regular",
-                            default: true,
-                          },
-                          {
-                            label: "バンカラ(チャレンジ)",
-                            value: "bankara-challenge",
-                          },
-                          {
-                            label: "バンカラ(オープン)",
-                            value: "bankara-open",
-                          },
-                        ],
+                        type: 2,
+                        custom_id: "regular,now",
+                        style: 3,
+                        label: "今のナワバリ",
                       },
-                    ],
-                  },
-                  {
-                    "type": 1,
-                    components: [
                       {
-                        type: 3,
-                        custom_id: "p2",
-                        options: [
-                          {
-                            label: "現在",
-                            value: "now",
-                            default: true,
-                          },
-                          {
-                            label: "次",
-                            value: "next",
-                          },
-                        ],
+                        type: 2,
+                        custom_id: "bankara-challenge,now",
+                        style: 4,
+                        label: "バンカラ(チャレンジ)",
+                      },
+                      {
+                        type: 2,
+                        custom_id: "bankara-open,now",
+                        style: 4,
+                        label: "バンカラ(オープン)",
                       },
                     ],
                   },
@@ -94,9 +73,21 @@ serve({
                     components: [
                       {
                         type: 2,
-                        custom_id: "b",
-                        style: 1,
-                        label: "くれ！",
+                        custom_id: "regular,next",
+                        style: 3,
+                        label: "次のナワバリ",
+                      },
+                      {
+                        type: 2,
+                        custom_id: "bankara-challenge,next",
+                        style: 4,
+                        label: "バンカラ(チャレンジ)",
+                      },
+                      {
+                        type: 2,
+                        custom_id: "bankara-open,next",
+                        style: 4,
+                        label: "バンカラ(オープン)",
                       },
                     ],
                   },
@@ -108,17 +99,13 @@ serve({
         break;
       }
       case InteractionTypes.MessageComponent: {
-        switch (payload.data.custom_id) {
-          case "b": {
-            console.log(payload.message.components);
-            return json({
-              type: InteractionResponseTypes.ChannelMessageWithSource,
-              data: {
-                content: "ok",
-              },
-            });
-          }
-        }
+        console.log(payload.data.custom_id);
+        return json({
+          type: InteractionResponseTypes.ChannelMessageWithSource,
+          data: {
+            content: "ok",
+          },
+        });
       }
     }
     console.log(payload.type, payload);
