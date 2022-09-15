@@ -1,5 +1,9 @@
 import { json, serve, validateRequest } from "sift";
-import { verifySignature } from "discordeno";
+import {
+  InteractionResponseTypes,
+  InteractionTypes,
+  verifySignature,
+} from "discordeno";
 
 const SigEd = "X-Signature-Ed25519";
 const SigTime = "X-Signature-Timestamp";
@@ -27,7 +31,13 @@ serve({
       return json({ error: "Invalid request" }, { status: 401 });
     }
     const payload = JSON.parse(body);
-    console.log(payload);
+    switch (payload.type) {
+      case InteractionTypes.Ping: {
+        return json({
+          type: InteractionResponseTypes.Pong,
+        });
+      }
+    }
     return new Response("ok");
   },
 });
