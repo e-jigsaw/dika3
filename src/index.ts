@@ -37,6 +37,18 @@ serve({
           type: InteractionResponseTypes.Pong,
         });
       }
+      case InteractionTypes.ApplicationCommand: {
+        switch (payload.data.name) {
+          case "ping": {
+            return json({
+              type: InteractionResponseTypes.ChannelMessageWithSource,
+              data: {
+                content: "pong",
+              },
+            });
+          }
+        }
+      }
     }
     console.log(payload);
     return new Response("ok");
