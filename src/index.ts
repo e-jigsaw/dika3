@@ -50,7 +50,7 @@ serve({
                     components: [
                       {
                         type: 3,
-                        costom_id: "select1",
+                        custom_id: "select1",
                         options: [
                           {
                             label: "ナワバリ",
