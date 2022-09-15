@@ -39,7 +39,7 @@ serve({
       }
       case InteractionTypes.ApplicationCommand: {
         switch (payload.data.name) {
-          case "ping": {
+          case "ping1": {
             return json({
               type: InteractionResponseTypes.ChannelMessageWithSource,
               data: {
