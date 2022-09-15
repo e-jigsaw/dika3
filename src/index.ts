@@ -107,7 +107,7 @@ serve({
         }
       }
     }
-    console.log(payload);
+    console.log(payload.type, payload);
     return new Response("ok");
   },
 });
