@@ -50,11 +50,12 @@ serve({
                     components: [
                       {
                         type: 3,
-                        custom_id: "select1",
+                        custom_id: "p1",
                         options: [
                           {
                             label: "ナワバリ",
                             value: "regular",
+                            default: true,
                           },
                           {
                             label: "バンカラ(チャレンジ)",
@@ -63,6 +64,26 @@ serve({
                           {
                             label: "バンカラ(オープン)",
                             value: "bankara-open",
+                          },
+                        ],
+                      },
+                    ],
+                  },
+                  {
+                    "type": 1,
+                    components: [
+                      {
+                        type: 3,
+                        custom_id: "p2",
+                        options: [
+                          {
+                            label: "現在",
+                            value: "now",
+                            default: true,
+                          },
+                          {
+                            label: "次",
+                            value: "next",
                           },
                         ],
                       },
