@@ -17,6 +17,14 @@ const Stages = new Map([
     name: "ゴンズイ地区",
     map: "https://i.gyazo.com/f580626388880f561f333b275ec403a0.png",
   }],
+  [12, {
+    name: "マヒマヒリゾート＆スパ",
+    map: "https://i.gyazo.com/29e3fbc4cffc08f3f61055c1a8229875.png",
+  }],
+  [16, {
+    name: "スメーシーワールド",
+    map: "https://i.gyazo.com/c691f71fe53921ed4ee30e621aeae6a8.png",
+  }],
 ]);
 
 serve({
