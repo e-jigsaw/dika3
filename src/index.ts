@@ -89,6 +89,17 @@ serve({
                       },
                     ],
                   },
+                  {
+                    "type": 1,
+                    components: [
+                      {
+                        type: 2,
+                        custom_id: "b",
+                        style: 1,
+                        label: "くれ！",
+                      },
+                    ],
+                  },
                 ],
               },
             });
