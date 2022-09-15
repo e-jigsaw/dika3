@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "discordeno": "https://deno.land/x/discordeno@15.0.2/mod.ts",
+    "sift": "https://deno.land/x/sift@0.6.0/mod.ts"
+  }
+}
