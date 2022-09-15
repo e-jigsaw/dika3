@@ -11,7 +11,7 @@ fetch(
     },
     method: "PUT",
     body: JSON.stringify([{
-      name: "ping1",
+      name: "イカ3 マップおしえて",
       type: 3,
     }]),
   },

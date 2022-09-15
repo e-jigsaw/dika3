@@ -213,7 +213,7 @@ serve({
       }
       case InteractionTypes.ApplicationCommand: {
         switch (payload.data.name) {
-          case "ping1": {
+          case "イカ3 マップおしえて": {
             return json({
               type: InteractionResponseTypes.ChannelMessageWithSource,
               data: {
