@@ -105,8 +105,8 @@ serve({
             "User-Agent": "dika3 (twitter @neo6120)",
           },
         });
-        const json = await res.json();
-        console.log(json);
+        const { results: { stages } } = await res.json();
+        console.log(stages);
         return json({
           type: InteractionResponseTypes.ChannelMessageWithSource,
           data: {
