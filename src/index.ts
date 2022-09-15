@@ -27,6 +27,55 @@ const Stages = new Map([
   }],
 ]);
 
+const components = [
+  {
+    "type": 1,
+    components: [
+      {
+        type: 2,
+        custom_id: "regular,now",
+        style: 3,
+        label: "今のナワバリ",
+      },
+      {
+        type: 2,
+        custom_id: "bankara-challenge,now",
+        style: 4,
+        label: "バンカラ(チャレンジ)",
+      },
+      {
+        type: 2,
+        custom_id: "bankara-open,now",
+        style: 4,
+        label: "バンカラ(オープン)",
+      },
+    ],
+  },
+  {
+    "type": 1,
+    components: [
+      {
+        type: 2,
+        custom_id: "regular,next",
+        style: 3,
+        label: "次のナワバリ",
+      },
+      {
+        type: 2,
+        custom_id: "bankara-challenge,next",
+        style: 4,
+        label: "バンカラ(チャレンジ)",
+      },
+      {
+        type: 2,
+        custom_id: "bankara-open,next",
+        style: 4,
+        label: "バンカラ(オープン)",
+      },
+    ],
+  },
+];
+
 serve({
   "/": async (req) => {
     const { error } = await validateRequest(req, {
@@ -62,55 +111,7 @@ serve({
             return json({
               type: InteractionResponseTypes.ChannelMessageWithSource,
               data: {
-                content: "pong",
-                components: [
-                  {
-                    "type": 1,
-                    components: [
-                      {
-                        type: 2,
-                        custom_id: "regular,now",
-                        style: 3,
-                        label: "今のナワバリ",
-                      },
-                      {
-                        type: 2,
-                        custom_id: "bankara-challenge,now",
-                        style: 4,
-                        label: "バンカラ(チャレンジ)",
-                      },
-                      {
-                        type: 2,
-                        custom_id: "bankara-open,now",
-                        style: 4,
-                        label: "バンカラ(オープン)",
-                      },
-                    ],
-                  },
-                  {
-                    "type": 1,
-                    components: [
-                      {
-                        type: 2,
-                        custom_id: "regular,next",
-                        style: 3,
-                        label: "次のナワバリ",
-                      },
-                      {
-                        type: 2,
-                        custom_id: "bankara-challenge,next",
-                        style: 4,
-                        label: "バンカラ(チャレンジ)",
-                      },
-                      {
-                        type: 2,
-                        custom_id: "bankara-open,next",
-                        style: 4,
-                        label: "バンカラ(オープン)",
-                      },
-                    ],
-                  },
-                ],
+                components,
               },
             });
           }
@@ -150,6 +151,7 @@ serve({
                 },
               },
             ],
+            components,
           },
         });
       }
