@@ -105,6 +105,20 @@ serve({
             });
           }
         }
+        break;
+      }
+      case InteractionTypes.MessageComponent: {
+        switch (payload.data.custom_id) {
+          case "b": {
+            console.log(payload.message.components);
+            return json({
+              type: InteractionResponseTypes.ChannelMessageWithSource,
+              data: {
+                content: "ok",
+              },
+            });
+          }
+        }
       }
     }
     console.log(payload.type, payload);
