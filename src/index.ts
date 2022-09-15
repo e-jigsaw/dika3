@@ -38,6 +38,7 @@ serve({
         });
       }
     }
+    console.log(payload);
     return new Response("ok");
   },
 });
