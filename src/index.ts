@@ -8,6 +8,17 @@ import {
 const SigEd = "X-Signature-Ed25519";
 const SigTime = "X-Signature-Timestamp";
 
+const Stages = new Map([
+  [1, {
+    name: "ユノハナ大渓谷",
+    map: "https://i.gyazo.com/20bea4fc3c0379fb73fad0b889923ed5.png",
+  }],
+  [2, {
+    name: "ゴンズイ地区",
+    map: "https://i.gyazo.com/f580626388880f561f333b275ec403a0.png",
+  }],
+]);
+
 serve({
   "/": async (req) => {
     const { error } = await validateRequest(req, {
@@ -106,11 +117,30 @@ serve({
           },
         });
         const { results: [{ stages }] } = await res.json();
-        console.log(stages);
+        const s1 = Stages.get(stages[0].id);
+        const s2 = Stages.get(stages[1].id);
         return json({
           type: InteractionResponseTypes.ChannelMessageWithSource,
           data: {
-            content: "ok",
+            content: `${p2 === "now" ? "今の" : "次の"}${
+              p1 === "regular" ? "ナワバリは" : ""
+            }${p1 === "bankara-challenge" ? "バンカラ(チャレンジ)は" : ""}${
+              p1 === "bankara-open" ? "バンカラ(オープン)は" : ""
+            }`,
+            embeds: [
+              {
+                title: s1?.name,
+                image: {
+                  url: s1?.map,
+                },
+              },
+              {
+                title: s2?.name,
+                image: {
+                  url: s2?.map,
+                },
+              },
+            ],
           },
         });
       }
