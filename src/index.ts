@@ -99,7 +99,14 @@ serve({
         break;
       }
       case InteractionTypes.MessageComponent: {
-        console.log(payload.data.custom_id);
+        const [p1, p2] = payload.data.custom_id.split(",");
+        const res = await fetch(`https://spla3.yuu26.com/api/${p1}/${p2}`, {
+          headers: {
+            "User-Agent": "dika3 (twitter @neo6120)",
+          },
+        });
+        const json = await res.json();
+        console.log(json);
         return json({
           type: InteractionResponseTypes.ChannelMessageWithSource,
           data: {
