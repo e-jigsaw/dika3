@@ -44,6 +44,29 @@ serve({
               type: InteractionResponseTypes.ChannelMessageWithSource,
               data: {
                 content: "pong",
+                components: [
+                  {
+                    "type": 1,
+                    components: {
+                      type: 3,
+                      costom_id: "select1",
+                      options: [
+                        {
+                          label: "ナワバリ",
+                          value: "regular",
+                        },
+                        {
+                          label: "バンカラ(チャレンジ)",
+                          value: "bankara-challenge",
+                        },
+                        {
+                          label: "バンカラ(オープン)",
+                          value: "bankara-open",
+                        },
+                      ],
+                    },
+                  },
+                ],
               },
             });
           }
