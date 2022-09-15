@@ -1,3 +1,6 @@
 {
-  "importMap": "./import_map.json"
+  "importMap": "./import_map.json",
+  "tasks": {
+    "register": "deno run --allow-read --allow-env --allow-net src/register.ts"
+  }
 }
