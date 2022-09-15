@@ -119,6 +119,7 @@ serve({
         const { results: [{ stages }] } = await res.json();
         const s1 = Stages.get(stages[0].id);
         const s2 = Stages.get(stages[1].id);
+        console.log(s1, s2);
         return json({
           type: InteractionResponseTypes.ChannelMessageWithSource,
           data: {
